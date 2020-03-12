@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/images/favicon.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Jste doma?</title>
+
+    <!-- MallTV DMP Code -->
+    <script type="text/javascript" src="https://gjstatic.blob.core.windows.net/fix/mall-dmp.js"></script>
+    <script>gjdmp.pv();</script>
+    <!-- End MallTV DMP Code -->
+
+    <meta name="description"
+        content="Co vedlo dosud bezproblémového patnáctiletého Martina přezdívaného Marty, k tomu, aby vzal do ruky mobil a natáčel se v situacích, ze kterých mrazí?">
+    <meta name="image" content="/images/social.jpg">
+    <meta itemprop="name" content="Webseriál #martyisdead - MALL.TV">
+    <meta itemprop="description"
+        content="Co vedlo dosud bezproblémového patnáctiletého Martina přezdívaného Marty, k tomu, aby vzal do ruky mobil a natáčel se v situacích, ze kterých mrazí?">
+    <meta itemprop="image" content="/images/social.jpg">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Webseriál #martyisdead - MALL.TV">
+    <meta name="twitter:description"
+        content="Co vedlo dosud bezproblémového patnáctiletého Martina přezdívaného Marty, k tomu, aby vzal do ruky mobil a natáčel se v situacích, ze kterých mrazí?">
+    <meta name="twitter:site" content="/images/social.jpg">
+    <meta name="og:title" content="Webseriál #martyisdead - MALL.TV">
+    <meta name="og:description"
+        content="Co vedlo dosud bezproblémového patnáctiletého Martina přezdívaného Marty, k tomu, aby vzal do ruky mobil a natáčel se v situacích, ze kterých mrazí?">
+    <meta name="og:image" content="/images/social.jpg">
+    <meta name="og:url" content="/">
+    <meta name="og:site_name" content="Webseriál #martyisdead - MALL.TV">
+    <meta name="og:locale" content="cs_CZ">
+    <meta name="og:type" content="website">
+
+    <style>
+        .content {
+            text-align: center;
+                      height: 100vh;
+            max-width: 1340px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .yes-content, .no-content {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+<div class="content">
+    <div>
+        <h1>Jste doma?</h1>
+        <a class="btn-answer btn-yes" href="#">ANO</a>
+        <a class="btn-answer btn-no" href="#">NE</a>
+        <div class="yes-content">ANO - Dobra prace, diky! <div class="counter"><span></span></div></div>
+        <div class="no-content">NE - Budte doma! <div class="counter"><span></span></div></div>
+    </div>
+</div>
+
+<script>
+    let btnYes = document.querySelector('.btn-yes');
+    let btnNo = document.querySelector('.btn-no');
+
+    let contentYes = document.querySelector('.yes-content');
+    let contentNo = document.querySelector('.no-content');
+
+        btnYes.addEventListener('click', function() {
+            contentNo.style = "display: none"; 
+            contentYes.style = "display: block;";
+            send_answer('yes'); 
+        }, true);
+        btnNo.addEventListener('click', function () {
+            contentYes.style = "display: none";
+            contentNo.style = "display: block;"; 
+            send_answer('no'); 
+        }, true);
+
+    function send_answer(answer) {
+            var xhttp;
+            console.log(answer);
+            xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    console.log(this.responseText);
+                    if(answer=='yes') {
+                        contentYes.querySelector('.counter span').innerHTML = this.responseText;
+                    } else if (answer == 'no') {
+                        contentNo.querySelector('.counter span').innerHTML = this.responseText;
+                    }
+                }
+            };
+            xhttp.open("GET", "http://jstedoma.cz/counter.php?answer=" + answer, true);
+            xhttp.send();
+        }
+</script>
+</body>
+
+</html>
