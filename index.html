@@ -81,11 +81,39 @@
             padding: 50px;
         }
 
+        .buttons {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+
         .btn-answer {
             font-family: 'Roboto', sans-serif;
             text-transform: uppercase;
             font-size: 2em;
+            width: 80px;
+            height: 80px;
+            border-radius: 30%;
+            color: #ffffff;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
         }
+
+        a.btn-answer:hover {
+            color: #ffffff;
+        }
+
+        .btn-yes {
+        background-color: green;
+        }
+
+        .btn-no {
+        background-color: red;
+        }
+
     </style>
 </head>
 
@@ -94,8 +122,10 @@
     <div class="white-box">
         <div>
             <h1>Jste doma?</h1>
-            <a class="btn-answer btn-yes" href="#">ANO</a>
-            <a class="btn-answer btn-no" href="#">NE</a>
+            <div class="buttons">
+                <a class="btn-answer btn-yes" href="#">ANO</a>
+                <a class="btn-answer btn-no" href="#">NE</a>
+            </div>
             <div class="yes-content">ANO - Dobrá práce, díky!<br />Tady máte za odměnu videa, na která se můžete zatím zdarma podívat&nbsp;📺<div class="counter"><span></span></div></div>
             <div class="no-content">NE - Buďte doma, proboha!<br /> Republika vás potřebuje!<br />P.S. Když budete doma, máme pro vás i malou odměnu&nbsp;👀 <div class="counter"><span></span></div></div>
         </div>
