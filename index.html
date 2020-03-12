@@ -7,6 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab&display=swap" rel="stylesheet"> 
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-143286794-7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-143286794-7');
+</script>
+
     <title>Jste doma?</title>
 
     <!-- MallTV DMP Code -->
@@ -36,12 +47,21 @@
     <meta name="og:type" content="website">
 
     <style>
+        body {
+            background-image: url(images/background.jpg);
+            font-family: 'Roboto Slab', serif;
+        }
+
+        h1 {
+            font-family: 'Roboto', sans-serif;
+            text-transform: uppercase;
+        }
+
         .content {
             text-align: center;
                       height: 100vh;
             max-width: 1340px;
             margin: 0 auto;
-            background-image: url(images/background.jpg);
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -59,6 +79,11 @@
             margin: auto;
             height: 350px;
             padding: 50px;
+        }
+
+        .btn-answer {
+            font-family: 'Roboto', sans-serif;
+            text-transform: uppercase;
         }
     </style>
 </head>
