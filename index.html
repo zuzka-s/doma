@@ -78,7 +78,7 @@
             justify-content: center;
             width: 45%;
             margin: auto;
-            height: 350px;
+            height: max-content;
             padding: 50px;
         }
 
@@ -94,6 +94,7 @@
             text-transform: uppercase;
             font-size: 2em;
             width: 80px;
+            min-width: 80px;
             height: 80px;
             border-radius: 50%;
             color: #ffffff;
@@ -118,6 +119,12 @@
 
         .answer {
             font-size: 1.3em;
+        }
+
+        @media screen and (max-width: 900px) {
+            .white-box {
+                width: 80%;
+            }
         }
 
     </style>
